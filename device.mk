@@ -56,6 +56,10 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay  \
     $(LOCAL_PATH)/overlay-lineage
 
+# ModemService
+PRODUCT_COPY_FILES += \
+  device/google/wahoo/modemservice.xml:system/etc/sysconfig/modemservice.xml
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.recovery.hardware.rc:root/init.recovery.$(PRODUCT_HARDWARE).rc \
