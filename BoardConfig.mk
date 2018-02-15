@@ -15,7 +15,7 @@
 #
 
 # Allow Lineage config to override others
--include device/google/wahoo/BoardConfigAICP.mk
+-include device/google/wahoo/BoardConfigLineage.mk
 
 TARGET_BOARD_PLATFORM := msm8998
 

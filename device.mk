@@ -23,7 +23,7 @@ PRODUCT_COPY_FILES += \
 
 # Set the SVN for the targeted MR release
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.svn=4
+    ro.vendor.build.svn=6
 
 # Enforce privapp-permissions whitelist
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -513,7 +513,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 # Subsystem ramdump
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.ssr.enable_ramdumps=1
@@ -575,6 +575,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     ipacm
+
+# Versioned netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
 
 #Set default CDMA subscription to RUIM
 PRODUCT_PROPERTY_OVERRIDES += \
