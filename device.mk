@@ -620,4 +620,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 
 #Gapps blobs
-$(call inherit-product, vendor/pixelgapps/pixel-gapps.mk)
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
