@@ -623,6 +623,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_PROPERTY_OVERRIDES += \
     fmas.hdph_sgain=0
 
+# ModemService
+PRODUCT_COPY_FILES += \
+  device/google/wahoo/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
 
 #Gapps blobs
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
