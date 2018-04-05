@@ -56,6 +56,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay  \
     $(LOCAL_PATH)/overlay-lineage
 
+# ModemService
+PRODUCT_COPY_FILES += \
+  device/google/wahoo/modemservice.xml:system/etc/sysconfig/modemservice.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.recovery.hardware.rc:root/init.recovery.$(PRODUCT_HARDWARE).rc \
@@ -567,8 +570,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include vndk/vndk-sp/ll-ndk modules
 PRODUCT_PACKAGES += vndk_package
-
-PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
 # Override heap growth limit due to high display density on device
 PRODUCT_PROPERTY_OVERRIDES += \
