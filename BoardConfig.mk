@@ -77,6 +77,13 @@ BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Skip API checks.
+WITHOUT_CHECK_API := true
+# Don't try to build and run all tests by default. Several tests have
+# dependencies on the framework.
+ANDROID_NO_TEST_CHECK := true
+
+
 # Install odex files into the other system image
 BOARD_USES_SYSTEM_OTHER_ODEX := true
 
