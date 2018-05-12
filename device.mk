@@ -23,7 +23,7 @@ PRODUCT_COPY_FILES += \
 
 # Set the SVN for the targeted MR release
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.svn=8
+    ro.vendor.build.svn=10
 
 # Enforce privapp-permissions whitelist
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -461,9 +461,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.audio.monitorRotation=true
 
-# Bug 62375603
-# PRODUCT_PROPERTY_OVERRIDES += audio.adm.buffering.ms=4
-
 # MIDI feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
@@ -471,10 +468,6 @@ PRODUCT_COPY_FILES += \
 # Audio low latency feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml
-
-# Pro audio feature
-# PRODUCT_COPY_FILES += \
-#   frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
@@ -547,10 +540,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 PRODUCT_COPY_FILES += \
     device/google/wahoo/fstab.hardware:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(PRODUCT_HARDWARE)
-
-# Provide meaningful APN configuration
-# PRODUCT_COPY_FILES += \
-#     $(LOCAL_PATH)/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Use the default charger mode images
 PRODUCT_PACKAGES += \
@@ -637,7 +626,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ModemService
 PRODUCT_COPY_FILES += \
-  device/google/wahoo/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
+    device/google/wahoo/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
 
 #Gapps blobs
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
