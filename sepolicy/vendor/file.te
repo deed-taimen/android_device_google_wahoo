@@ -93,3 +93,6 @@ typeattribute sysfs_batteryinfo mlstrustedobject;
 type proc_irq, fs_type;
 type sysfs_irq, fs_type;
 type irqbalance_socket, file_type;
+
+# display
+type sysfs_livedisplay, sysfs_type, fs_type; 
