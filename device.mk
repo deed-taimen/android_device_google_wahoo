@@ -23,14 +23,15 @@ PRODUCT_COPY_FILES += \
 
 # Set the SVN for the targeted MR release
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.svn=6
+    ro.vendor.build.svn=10
 
 # Enforce privapp-permissions whitelist
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions=log
 
 PRODUCT_PACKAGES += \
-    messaging
+    messaging \
+    netutils-wrapper-1.0
 
 LOCAL_PATH := device/google/wahoo
 
@@ -60,6 +61,13 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES += \
   device/google/wahoo/modemservice.xml:system/etc/sysconfig/modemservice.xml
 
+# MiFare Permissions file
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
+
+# EUICC feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.euicc.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.recovery.hardware.rc:root/init.recovery.$(PRODUCT_HARDWARE).rc \
@@ -632,4 +640,4 @@ PRODUCT_COPY_FILES += \
   device/google/wahoo/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
 
 #Gapps blobs
-$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
