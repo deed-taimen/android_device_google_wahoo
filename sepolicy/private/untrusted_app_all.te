@@ -1,2 +1,3 @@
 # suppress spurious denials
 dontaudit untrusted_app_all sysfs_zram:dir search;
+allow untrusted_app overlay_service:service_manager find;
