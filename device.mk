@@ -285,10 +285,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt
 
-#ipacm configuration files
-#PRODUCT_COPY_FILES += \
-#    hardware/qcom/data/ipacfg-mgr/msm8998/ipacm/src/IPACM_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/IPACM_cfg.xml
-
 PRODUCT_PACKAGES += \
     hwcomposer.msm8998 \
     android.hardware.graphics.composer@2.1-impl \
@@ -636,6 +632,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # ModemService
 PRODUCT_COPY_FILES += \
   device/google/wahoo/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += device/google/wahoo/overlay-lineage
+
+# EUICC feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.euicc.xml
+
+# IMS
+PRODUCT_PACKAGES += \
+   com.android.ims.rcsmanager \
+   RcsService \
+   PresencePolling
 
 #Gapps blobs
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
