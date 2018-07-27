@@ -228,7 +228,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.videopause.mode=1 \
     persist.radio.sap_silent_pin=1 \
     persist.radio.sib16_support=1 \
-    persist.radio.data_con_rprt=true \
+    persist.radio.data_con_rprt=1 \
     persist.radio.always_send_plmn=true \
     persist.rcs.supported=1 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
@@ -543,8 +543,12 @@ PRODUCT_COPY_FILES += \
     device/google/wahoo/fstab.hardware:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(PRODUCT_HARDWARE)
 
 # Provide meaningful APN configuration
-# PRODUCT_COPY_FILES += \
-#     $(LOCAL_PATH)/apns-full-conf.xml:system/etc/apns-conf.xml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/apns-full-conf.xml:system/etc/apns-conf.xml
+
+# Add back old APNs
+PRODUCT_COPY_FILES += \
+    device/google/wahoo/old-apns-conf.xml:system/etc/old-apns-conf.xml
 
 # Use the default charger mode images
 PRODUCT_PACKAGES += \

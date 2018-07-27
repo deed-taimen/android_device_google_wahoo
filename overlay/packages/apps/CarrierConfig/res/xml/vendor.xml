@@ -287,4 +287,11 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
+    <carrier_config mcc="302" mnc="220">
+        <int name="vvm_port_number_int" value="5499" />
+        <string name="vvm_destination_number_string">7723</string>
+        <string name="vvm_type_string">vvm_type_omtp</string>
+        <boolean name="vvm_cellular_data_required_bool" value="true" />
+        <boolean name="vvm_prefetch_bool" value="true" />
+    </carrier_config>
 </carrier_config_list>
