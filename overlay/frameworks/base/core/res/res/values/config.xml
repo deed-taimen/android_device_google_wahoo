@@ -255,13 +255,10 @@
     <string name="config_dozeLongPressSensorType" translatable="false">com.google.sensor.long_press</string>
 
     <!-- Whether the always on display mode is available. -->
-    <bool name="config_enableDozeAlwaysOn">true</bool>
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
     <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
-
-    <!-- Whether device supports an alt. ambient display -->
-    <bool name="config_alt_ambient_display">true</bool>
 
     <!-- True if the display hardware only has brightness buckets rather than a full range of
          backlight values -->
