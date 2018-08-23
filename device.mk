@@ -30,8 +30,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions=log
 
 PRODUCT_PACKAGES += \
-    messaging \
-    netutils-wrapper-1.0
+    messaging
 
 LOCAL_PATH := device/google/wahoo
 
@@ -51,7 +50,6 @@ endif
 
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_SHIPPING_API_LEVEL := 26
-PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -646,6 +644,7 @@ PRODUCT_COPY_FILES += \
 
 # IMS
 PRODUCT_PACKAGES += \
+   com.android.ims.rcsmanager.xml \
    com.android.ims.rcsmanager \
    RcsService \
    PresencePolling
